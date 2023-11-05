@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(59, 46, 46);
+    background-color: url('static/images/BG.jpg');
     border-radius: 50px;
 }
 
@@ -41,6 +41,7 @@ p {
 
 #container_flex {
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
@@ -82,4 +83,17 @@ p {
     /* Make all images the same width */
     height: auto;
     /* Maintain aspect ratio */
+}
+
+.merged-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-item {
+    flex: 1;
+    padding: 20px;
+    background-color: gray;
+    display: none;
+    /* Hidden by default */
 }

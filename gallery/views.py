@@ -11,40 +11,44 @@ def photos(request):
 def albums(request):
     image_data = [
         {
-            'url': '/static/images/img1.jpg',
+            'url': '/static/images/images1.jpg',
             'title': 'Image 1',
         },
         {
-            'url': '/static/images/img2.jpg',
+            'url': '/static/images/images2.jpg',
             'title': 'Image 2',
         },
         {
-            'url': '/static/images/img3.jpg',
+            'url': '/static/images/images3.jpg',
             'title': 'Image 3',
         },
         {
-            'url': '/static/images/img4.jpg',
+            'url': '/static/images/images4.jpg',
             'title': 'Image 4',
         },
         {
-            'url': '/static/images/img5.jpg',
+            'url': '/static/images/images5.jpg',
             'title': 'Image 5',
         },
         {
-            'url': '/static/images/img6.jpg',
+            'url': '/static/images/images6.jpg',
             'title': 'Image 6',
         },
         {
-            'url': '/static/images/img7.jpg',
+            'url': '/static/images/images7.jpg',
             'title': 'Image 7',
         },
         {
-            'url': '/static/images/img8.jpg',
+            'url': '/static/images/images8.jpg',
             'title': 'Image 8',
         },
         {
-            'url': '/static/images/img9.jpeg',
+            'url': '/static/images/images9.jpg',
             'title': 'Image 9',
+        },
+                {
+            'url': '/static/images/images10.jpg',
+            'title': 'Image 10',
         },
     ]
     context = {
@@ -70,42 +74,45 @@ def photos(request):
     # Manually create a list of image data with file paths
     image_data = [
         {
-            'url': '/static/images/img1.jpg',
+            'url': '/static/images/images1.jpg',
             'title': 'Image 1',
         },
         {
-            'url': '/static/images/img2.jpg',
+            'url': '/static/images/images2.jpg',
             'title': 'Image 2',
         },
         {
-            'url': '/static/images/img3.jpg',
+            'url': '/static/images/images3.jpg',
             'title': 'Image 3',
         },
         {
-            'url': '/static/images/img4.jpg',
+            'url': '/static/images/images4.jpg',
             'title': 'Image 4',
         },
         {
-            'url': '/static/images/img5.jpg',
+            'url': '/static/images/images5.jpg',
             'title': 'Image 5',
         },
         {
-            'url': '/static/images/img6.jpg',
+            'url': '/static/images/images6.jpg',
             'title': 'Image 6',
         },
         {
-            'url': '/static/images/img7.jpg',
+            'url': '/static/images/images7.jpg',
             'title': 'Image 7',
         },
         {
-            'url': '/static/images/img8.jpg',
+            'url': '/static/images/images8.jpg',
             'title': 'Image 8',
         },
         {
-            'url': '/static/images/img9.jpeg',
+            'url': '/static/images/images9.jpg',
             'title': 'Image 9',
         },
-        
+        {
+            'url': '/static/images/images10.jpg',
+            'title': 'Image 10',
+        },
     ]
     context = {
         'photos': image_data,

@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 {% block title %} Home {% endblock %}
 {% block content %}
-
+{%load static%}
 <main role="main">
     <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
+    <div class="jumbotron" style="background:url(' {%static 'images/BG.jpg' %}') no-repeat; background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;">
         <div class="container">
             <center><h1 class="display-3">Welcome <br> To My <br> Gallery</h1></center>
         </div>

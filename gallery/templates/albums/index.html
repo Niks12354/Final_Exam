@@ -4,106 +4,241 @@
 {% load static %}
 <main role="main" >
     <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
+    <div class="jumbotron" style="background:url(' {%static 'images/BG.jpg' %}') no-repeat; background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;">
         <div class="container">
             <center><h1 class="display-3">My Albums</h1></center>
         </div>
     </div>
     
     {% comment %} Button images to show the photos {% endcomment %}
-    <div class="container_flex" id="container_flex">
-        <div class="row-image"style="background-color:gray;padding:20px;height:230px;">
-            <div class="col-md-4-images mb-4">
-                <div class="card-images" id="card-images">
-                    <div class="card-bodyImages">
-                        <div class="photo-container-images">
-                            <button class="btn-img btn-primary photo-button" id="showImages">
-                                <img src="{% static "/images/img2.jpg" %}" alt="" class="photo-images">
-                            </button>
-                        </div>
-                    <center>
-                        <h5>Image 1</h5>
-                        <p>12-12-12</p>
-                    </center>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row-image"style="background-color:gray;padding:20px;height:230px;">
-            <div class="col-md-4-images mb-4">
-                <div class="card-images" id="card-images">
-                    <div class="card-bodyImages">
-                        <div class="photo-container-images">
-                            <button class="btn-img btn-primary photo-button" id="showImages1">
-                                <img src="{% static "/images/img9.jpeg" %}" alt="" class="photo-images">
-                            </button>
-                        </div>
-                    <center>
-                        <h5>Image 2</h5>
-                        <p>12-13-12</p>
-                    </center>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row-image"style="background-color:gray;padding:20px;height:230px;">
-            <div class="col-md-4-images mb-4">
-                <div class="card-images" id="card-images">
-                    <div class="card-bodyImages">
-                        <div class="photo-container-images">
-                            <button class="btn-img btn-primary photo-button" id="showImages2">
-                                <img src="{% static "/images/img5.jpg" %}" alt="" class="photo-images">
-                            </button>
-                        </div>
-                    <center>
-                        <h5>Image 3</h5>
-                        <p>12-14-12</p>
-                    </center>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="merged-container">
         
-
-    <div class="container" id="hidden-div" style="display: none;">
-        <button id="backButton"><</button>
-        <center><h1 style="color:white;">Photos</h1></center>
-        <div class="row">
-
-            {% for photo in photos %}
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="{{ photo.url }}" class="card-img-top" alt="{{ photo.title }}" style="max-height: 250px;">
-                        <div class="card-body">
-                            <center><h5 class="card-title">{{ photo.title }}</h5></center>
-                            <p class="card-text">{{ photo.description }}</p>
+        <div class="container_flex" id="container_flex">
+            <div class="row-image"style="background-color:gray;padding:20px;height:250px;">
+                <div class="col-md-4-images mb-4">
+                    <div class="card-images" id="card-images">
+                        <div class="card-bodyImages">
+                            <div class="photo-container-images">
+                                <button class="btn-img btn-primary photo-button" id="showImages">
+                                    <img src="{% static "/images/images2.jpg" %}" alt="" class="photo-images"style="height:150px">
+                                </button>
+                            </div>
+                        <center>
+                            <h5>My Favorites</h5>
+                            <p>March 18, 2023</p>
+                        </center>
                         </div>
                     </div>
                 </div>
-            {% endfor %}
+            </div>
+            <div class="row-image"style="background-color:gray;padding:20px;height:250px;">
+                <div class="col-md-4-images mb-4">
+                    <div class="card-images" id="card-images">
+                        <div class="card-bodyImages">
+                            <div class="photo-container-images">
+                                <button class="btn-img btn-primary photo-button" id="showImages1">
+                                    <img src="{% static "/images/images9.jpg" %}" alt="" class="photo-images" style="height:150px">
+                                </button>
+                            </div>
+                        <center>
+                            <h5>My Idols</h5>
+                            <p>April 20, 2023</p>
+                        </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-image"style="background-color:gray;padding:20px;height:250px;">
+                <div class="col-md-4-images mb-4">
+                    <div class="card-images" id="card-images">
+                        <div class="card-bodyImages">
+                            <div class="photo-container-images">
+                                <button class="btn-img btn-primary photo-button" id="showImages2">
+                                    <img src="{% static "/images/images5.jpg" %}" alt="" class="photo-images" style="height:150px">
+                                </button>
+                            </div>
+                        <center>
+                            <h5>My Cravings</h5>
+                            <p>May 28, 2023</p>
+                        </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    
-    </div>
+        
         <div class="container" id="hidden-div" style="display: none;">
-        <button id="backButton"><</button>
-        <center><h1 style="color:white;">Photos</h1></center>
-        <div class="row">
-
-            {% for photo in photos %}
+            <center><h1 style="color:white;">Photos</h1></center>
+            <div class="row">
+                
+                {% for photo in photos %}
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="{{ photo.url }}" class="card-img-top" alt="{{ photo.title }}" style="max-height: 250px;">
+                        <img src="{{ photo.url }}" class="card-img-top" alt="{{ photo.title }}" style="max-height: 100px;">
                         <div class="card-body">
                             <center><h5 class="card-title">{{ photo.title }}</h5></center>
                             <p class="card-text">{{ photo.description }}</p>
                         </div>
                     </div>
                 </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
+            
         </div>
-    
+        <div class="container" id="hidden-div1" style="display: none;">
+            <center><h1 style="color:white;">Photos</h1></center>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{% static "/images/images2.jpg" %}" class="card-img-top" alt="Image 1" style="max-height: 100px;">
+                        <div class="card-body">
+                            <center><h5 class="card-title">Image 1</h5></center>
+                            <p class="card-text">wala mani ayo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{% static "/images/images9.jpg" %}" class="card-img-top" alt="Image 2" style="max-height: 100px;">
+                        <div class="card-body">
+                            <center><h5 class="card-title">Image 2</h5></center>
+                            <p class="card-text">wala mani ayo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{% static "/images/images10.jpg" %}" class="card-img-top" alt="Image 3" style="max-height: 100px;">
+                        <div class="card-body">
+                            <center><h5 class="card-title">Image 3</h5></center>
+                            <p class="card-text">wala mani ayo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{% static "/images/images7.jpg" %}" class="card-img-top" alt="Image 4" style="max-height: 100px;">
+                        <div class="card-body">
+                            <center><h5 class="card-title">Image 4</h5></center>
+                            <p class="card-text">wala mani ayo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{% static "/images/images3.jpg" %}" class="card-img-top" alt="Image 5" style="max-height: 100px;">
+                        <div class="card-body">
+                            <center><h5 class="card-title">Image 5</h5></center>
+                            <p class="card-text">wala mani ayo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{% static "/images/images8.jpg" %}" class="card-img-top" alt="Image 6" style="max-height: 100px;">
+                        <div class="card-body">
+                            <center><h5 class="card-title">Image 6</h5></center>
+                            <p class="card-text">wala mani ayo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{% static "/images/images5.jpg" %}" class="card-img-top" alt="Image 7" style="max-height: 100px;">
+                        <div class="card-body">
+                            <center><h5 class="card-title">Image 7</h5></center>
+                            <p class="card-text">wala mani ayo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{% static "/images/images1.jpg" %}" class="card-img-top" alt="Image 8" style="max-height: 100px;">
+                        <div class="card-body">
+                            <center><h5 class="card-title">Image 8</h5></center>
+                            <p class="card-text">wala mani ayo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{% static "/images/images4.jpg" %}" class="card-img-top" alt="Image 9" style="max-height: 100px;">
+                        <div class="card-body">
+                            <center><h5 class="card-title">Image 9</h5></center>
+                            <p class="card-text">wala mani ayo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+        <div class="container" id="hidden-div2" style="display: none;">
+            <center><h1 style="color:white;">Photos</h1></center>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{% static "/images/images8.jpg" %}" class="card-img-top" alt="Image 1" style="max-height: 100px;">
+                        <div class="card-body">
+                            <center><h5 class="card-title">Image 1</h5></center>
+                            <p class="card-text">wala mani ayo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{% static "/images/images7.jpg" %}" class="card-img-top" alt="Image 2" style="max-height: 100px;">
+                        <div class="card-body">
+                            <center><h5 class="card-title">Image 2</h5></center>
+                            <p class="card-text">wala mani ayo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{% static "/images/images5.jpg" %}" class="card-img-top" alt="Image 3" style="max-height: 100px;">
+                        <div class="card-body">
+                            <center><h5 class="card-title">Image 3</h5></center>
+                            <p class="card-text">wala mani ayo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{% static "/images/images3.jpg" %}" class="card-img-top" alt="Image 4" style="max-height: 100px;">
+                        <div class="card-body">
+                            <center><h5 class="card-title">Image 4</h5></center>
+                            <p class="card-text">wala mani ayo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{% static "/images/images1.jpg" %}" class="card-img-top" alt="Image 5" style="max-height: 100px;">
+                        <div class="card-body">
+                            <center><h5 class="card-title">Image 5</h5></center>
+                            <p class="card-text">wala mani ayo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{% static "/images/images2.jpg" %}" class="card-img-top" alt="Image 6" style="max-height: 100px;">
+                        <div class="card-body">
+                            <center><h5 class="card-title">Image 6</h5></center>
+                            <p class="card-text">wala mani ayo</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
     </div>
+</div>
         <hr />
 </main>
 {% endblock %}
